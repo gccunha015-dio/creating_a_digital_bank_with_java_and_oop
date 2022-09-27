@@ -1,13 +1,15 @@
 public class ContaPoupanca extends Conta {
-  public ContaPoupanca() {}
+  public ContaPoupanca(Cliente cliente) {
+    super(cliente);
+  }
 
-  public ContaPoupanca(double saldoInicial) {
-    super(saldoInicial);
+  public ContaPoupanca(Cliente cliente, double saldoInicial) {
+    super(cliente, saldoInicial);
   }
 
   @Override
   public void emitirExtrato() {
-    System.out.println("Conta Poupança");
+    System.out.println("=== EXTRATO CONTA POUPANÇA ===");
     super.emitirExtrato();
   }
 }
