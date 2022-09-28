@@ -1,3 +1,5 @@
+package digitalbank;
+
 public class App {
     public static void main(String[] args) throws Exception {
         Banco banco = new Banco("DIO Digital Bank");

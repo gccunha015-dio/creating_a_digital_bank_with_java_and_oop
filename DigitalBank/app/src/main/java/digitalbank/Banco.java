@@ -1,9 +1,18 @@
+package digitalbank;
+
 import java.util.Map;
 import java.util.TreeMap;
 import java.util.TreeSet;
 
+import lombok.AccessLevel;
+import lombok.Data;
+import lombok.Setter;
+
+@Data
+@Setter(AccessLevel.NONE)
 public class Banco {
   private String nome;
+
   private Map<String, Conta> contas = new TreeMap<>();
 
   public Banco(String nome) {
@@ -22,14 +31,6 @@ public class Banco {
         conta
       );
     }
-  }
-
-  public String getNome() {
-    return nome;
-  }
-
-  public Map<String, Conta> getContas() {
-    return contas;
   }
 
   public void listarClientes() {

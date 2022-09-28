@@ -1,10 +1,22 @@
+package digitalbank;
+
+import lombok.AccessLevel;
+import lombok.Data;
+import lombok.Setter;
+
+@Data
+@Setter(AccessLevel.NONE)
 public abstract class Conta implements IConta {
   private static final int AGENCIA_PADRAO = 1;
+
   private static int NUMERO_AUTO_INCREMENTADO = 1;
 
   protected int agencia = AGENCIA_PADRAO;
+
   protected int numero = NUMERO_AUTO_INCREMENTADO++;
+
   protected double saldo = 0;
+
   protected Cliente cliente;
 
   public Conta(Cliente cliente) {
@@ -14,18 +26,6 @@ public abstract class Conta implements IConta {
   public Conta(Cliente cliente, double saldoInicial) {
     this(cliente);
     saldo = saldoInicial;
-  }
-
-  public int getAgencia() {
-    return agencia;
-  }
-
-  public int getNumero() {
-    return numero;
-  }
-
-  public Cliente getCliente() {
-    return cliente;
   }
 
   public void depositar(double valor) {
